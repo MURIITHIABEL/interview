@@ -1,10 +1,10 @@
 import React, { useState } from 'react';
 
+
 const PatientsRegistrationForm = () => {
-  // State variables to hold form data
   const [telephone, setTelephone] = useState('');
   const [name, setName] = useState('');
-  const [dob, setDOB] = useState('');
+  const [dob, setDob] = useState('');
   const [idNumber, setIdNumber] = useState('');
   const [address, setAddress] = useState('');
   const [county, setCounty] = useState('');
@@ -12,21 +12,15 @@ const PatientsRegistrationForm = () => {
   const [email, setEmail] = useState('');
   const [gender, setGender] = useState('');
   const [maritalStatus, setMaritalStatus] = useState('');
+  const [kinName, setKinName] = useState('');
+  const [kinDob, setKinDob] = useState('');
+  const [kinIdNumber, setKinIdNumber] = useState('');
+  const [kinGender, setKinGender] = useState('');
+  const [kinRelationship, setKinRelationship] = useState('');
 
-  // Next of Kin data
-  const [nextOfKinName, setNextOfKinName] = useState('');
-  const [nextOfKinDOB, setNextOfKinDOB] = useState('');
-  const [nextOfKinIdNumber, setNextOfKinIdNumber] = useState('');
-  const [nextOfKinGender, setNextOfKinGender] = useState('');
-  const [relationship, setRelationship] = useState('');
-  const [nextOfKinTelephone, setNextOfKinTelephone] = useState('');
-
-  // Submit form handler
   const handleSubmit = (e) => {
     e.preventDefault();
-    // You can perform any further processing or API calls here
-    // For this example, we will just log the form data
-    console.log({
+    const formData = {
       telephone,
       name,
       dob,
@@ -38,117 +32,185 @@ const PatientsRegistrationForm = () => {
       gender,
       maritalStatus,
       nextOfKin: {
-        name: nextOfKinName,
-        dob: nextOfKinDOB,
-        idNumber: nextOfKinIdNumber,
-        gender: nextOfKinGender,
-        relationship,
-        telephone: nextOfKinTelephone,
+        name: kinName,
+        dob: kinDob,
+        idNumber: kinIdNumber,
+        gender: kinGender,
+        relationship: kinRelationship,
       },
-    });
+    };
+
+    fetch('http://localhost:9292/patients', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(formData),
+    })
+      .then((response) => response.json())
+      .then((data) => {
+        console.log('Form submitted!', data);
+        window.location.reload();
+      })
+      .catch((error) => {
+        console.error('Error submitting form:', error);
+      });
   };
+  
 
   return (
-    
     <form onSubmit={handleSubmit}>
-        <h2>Patients Registration Form</h2>
-      <label>
-        Telephone:
-        <input type="text" value={telephone} onChange={(e) => setTelephone(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="telephone">Telephone:</label>
+        <input
+          type="text"
+          id="telephone"
+          value={telephone}
+          onChange={(e) => setTelephone(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Name:
-        <input type="text" value={name} onChange={(e) => setName(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="name">Name:</label>
+        <input
+          type="text"
+          id="name"
+          value={name}
+          onChange={(e) => setName(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Date of Birth:
-        <input type="text" value={dob} onChange={(e) => setDOB(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="dob">Date of Birth:</label>
+        <input
+          type="date"
+          id="dob"
+          value={dob}
+          onChange={(e) => setDob(e.target.value)}
+        />
+      </div>
 
-      <label>
-        ID Number:
-        <input type="text" value={idNumber} onChange={(e) => setIdNumber(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="idNumber">ID Number:</label>
+        <input
+          type="number"
+          id="idNumber"
+          value={idNumber}
+          onChange={(e) => setIdNumber(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Address:
-        <input type="text" value={address} onChange={(e) => setAddress(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="address">Address:</label>
+        <textarea
+          id="address"
+          value={address}
+          onChange={(e) => setAddress(e.target.value)}
+        />
+      </div>
 
-      <label>
-        County:
-        <input type="text" value={county} onChange={(e) => setCounty(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="county">County:</label>
+        <input
+          type="text"
+          id="county"
+          value={county}
+          onChange={(e) => setCounty(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Sub County:
-        <input type="text" value={subCounty} onChange={(e) => setSubCounty(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="subCounty">Sub County:</label>
+        <input
+          type="text"
+          id="subCounty"
+          value={subCounty}
+          onChange={(e) => setSubCounty(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Email:
-        <input type="email" value={email} onChange={(e) => setEmail(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="email">Email:</label>
+        <input
+          type="email"
+          id="email"
+          value={email}
+          onChange={(e) => setEmail(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Gender:
-        <input type="text" value={gender} onChange={(e) => setGender(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="gender">Gender:</label>
+        <input
+          type="text"
+          id="gender"
+          value={gender}
+          onChange={(e) => setGender(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Marital Status:
-        <input type="text" value={maritalStatus} onChange={(e) => setMaritalStatus(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="maritalStatus">Marital Status:</label>
+        <input
+          type="text"
+          id="maritalStatus"
+          value={maritalStatus}
+          onChange={(e) => setMaritalStatus(e.target.value)}
+        />
+      </div>
 
+     
       <h2>Next of Kin</h2>
 
-      <label>
-        Name:
-        <input type="text" value={nextOfKinName} onChange={(e) => setNextOfKinName(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="kinName">Name:</label>
+        <input
+          type="text"
+          id="kinName"
+          value={kinName}
+          onChange={(e) => setKinName(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Date of Birth:
-        <input type="text" value={nextOfKinDOB} onChange={(e) => setNextOfKinDOB(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="kinDob">Date of Birth:</label>
+        <input
+          type="date"
+          id="kinDob"
+          value={kinDob}
+          onChange={(e) => setKinDob(e.target.value)}
+        />
+      </div>
 
-      <label>
-        ID Number:
-        <input type="text" value={nextOfKinIdNumber} onChange={(e) => setNextOfKinIdNumber(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="kinIdNumber">ID Number:</label>
+        <input
+          type="number"
+          id="kinIdNumber"
+          value={kinIdNumber}
+          onChange={(e) => setKinIdNumber(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Gender:
-        <input type="text" value={nextOfKinGender} onChange={(e) => setNextOfKinGender(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="kinGender">Gender:</label>
+        <input
+          type="text"
+          id="kinGender"
+          value={kinGender}
+          onChange={(e) => setKinGender(e.target.value)}
+        />
+      </div>
 
-      <label>
-        Relationship:
-        <input type="text" value={relationship} onChange={(e) => setRelationship(e.target.value)} />
-      </label>
-      <br />
-
-      <label>
-        Telephone:
-        <input type="text" value={nextOfKinTelephone} onChange={(e) => setNextOfKinTelephone(e.target.value)} />
-      </label>
-      <br />
+      <div>
+        <label htmlFor="kinRelationship">Relationship:</label>
+        <input
+          type="text"
+          id="kinRelationship"
+          value={kinRelationship}
+          onChange={(e) => setKinRelationship(e.target.value)}
+        />
+      </div>
 
       <button type="submit">Submit</button>
     </form>
