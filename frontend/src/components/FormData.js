@@ -40,48 +40,43 @@ const Patient = () => {
       },
     };
   
-    // Save the data to the database
-    fetch('http://localhost:9292/patients', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Form submitted!', data);
   
-        const message = Object.entries(formData).map(([key, value]) => {
-          return `${key}: ${value}`;
-        }).join('\n');
-  
-        const templateParams = {
-          to_email: formData.email, 
-          subject: formData.name,
-          message: formData.name,
-          telephone: formData.telephone,
-          address: formData.address,
-        };
-  
-        emailjs.send("service_wt2d74l", "template_sn6n67c", templateParams, "idTLnUqMsdu3F0IAc")
-          .then((response) => {
-            console.log('Email sent successfully!', response);
-            window.location.reload(); // Reload the page after successful email sending
-          })
-          .catch((error) => {
-            console.error('Error sending email:', error);
-          });
-      })
-      .catch((error) => {
-        console.error('Error submitting form:', error);
-      });
-  };
-  
-  
-  
+  fetch('http://localhost:9292/patients', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify(formData),
+  })
+    .then((response) => response.json())
+    .then((data) => {
+      console.log('Form submitted!', data);
 
-  
+    
+      alert('Form submitted successfully!');
+
+      const templateParams = {
+        to_email: formData.email,
+        subject: formData.name,
+        message: formData.name,
+        telephone: formData.telephone,
+        address: formData.address,
+      };
+// email messaging service, change the service id to your emailjs service id 
+      emailjs
+        .send('service_wt2d74l', 'template_sn6n67c', templateParams, 'idTLnUqMsdu3F0IAc')
+        .then((response) => {
+          console.log('Email sent successfully!', response);
+          window.location.reload(); // Reload the page after successful email sending
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error);
+        });
+    })
+    .catch((error) => {
+      console.error('Error submitting form:', error);
+    });
+};
 
   return (
     <form
