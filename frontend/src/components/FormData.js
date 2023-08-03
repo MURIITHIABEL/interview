@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import emailjs from 'emailjs-com';
 
-
-const PatientsRegistrationForm = () => {
+const Patient = () => {
   const [telephone, setTelephone] = useState('');
   const [name, setName] = useState('');
   const [dob, setDob] = useState('');
@@ -40,6 +40,7 @@ const PatientsRegistrationForm = () => {
       },
     };
 
+    // Save the data to the database
     fetch('http://localhost:9292/patients', {
       method: 'POST',
       headers: {
@@ -50,12 +51,30 @@ const PatientsRegistrationForm = () => {
       .then((response) => response.json())
       .then((data) => {
         console.log('Form submitted!', data);
-        window.location.reload();
+
+        // Send email after the data is successfully saved in the database
+        const templateParams = {
+          to_email: formData.email, // Replace with the actual recipient's email
+          subject: 'New Patient Information',
+          text: `Reference no.: ${data.id}\n\nData:\n${JSON.stringify(formData, null, 2)}`,
+        };
+
+        // Use your own email template ID, service ID, and user ID from emailjs.com
+        emailjs.send("service_wt2d74l", "template_sn6n67c", templateParams, "idTLnUqMsdu3F0IAc")
+          .then((response) => {
+            console.log('Email sent successfully!', response);
+            window.location.reload();
+          })
+          .catch((error) => {
+            console.error('Error sending email:', error);
+            window.location.reload();
+          });
       })
       .catch((error) => {
         console.error('Error submitting form:', error);
       });
   };
+
   
 
   return (
@@ -217,4 +236,4 @@ const PatientsRegistrationForm = () => {
   );
 };
 
-export default PatientsRegistrationForm;
+export default Patient;
