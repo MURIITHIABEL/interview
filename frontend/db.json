@@ -39,6 +39,106 @@
         "relationship": "cousin"
       },
       "id": 2
+    },
+    {
+      "telephone": "070760668898",
+      "name": "Abel",
+      "dob": "2023-08-25",
+      "idNumber": "434",
+      "address": "xcx",
+      "county": "cxvx",
+      "subCounty": "sfswf",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "male",
+      "maritalStatus": "married",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-30",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 3
+    },
+    {
+      "telephone": "07076066",
+      "name": "steph",
+      "dob": "2023-08-17",
+      "idNumber": "434",
+      "address": "xcx",
+      "county": "sds",
+      "subCounty": "sfswf",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "male",
+      "maritalStatus": "single",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-05",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "cousin"
+      },
+      "id": 4
+    },
+    {
+      "telephone": "07070707",
+      "name": "ferrari",
+      "dob": "2023-08-24",
+      "idNumber": "434",
+      "address": "sfcsf",
+      "county": "cxvx",
+      "subCounty": "sd",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "qerff",
+      "maritalStatus": "single",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-15",
+        "idNumber": "78",
+        "gender": "male",
+        "relationship": "cousin"
+      },
+      "id": 5
+    },
+    {
+      "telephone": "07076066",
+      "name": "Abel",
+      "dob": "2023-08-09",
+      "idNumber": "434",
+      "address": "sfd",
+      "county": "sds",
+      "subCounty": "dffv",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "male",
+      "maritalStatus": "male",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-17",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 6
+    },
+    {
+      "telephone": "070760668898",
+      "name": "ferrari",
+      "dob": "2023-08-10",
+      "idNumber": "434",
+      "address": "rfdgrsdfd",
+      "county": "sds",
+      "subCounty": "dffv",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "male",
+      "maritalStatus": "married",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-10",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 7
     }
   ]
 }
