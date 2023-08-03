@@ -18,7 +18,7 @@ const Patient = () => {
   const [kinGender, setKinGender] = useState('');
   const [kinRelationship, setKinRelationship] = useState('');
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const formData = {
       telephone,
@@ -39,46 +39,43 @@ const Patient = () => {
         relationship: kinRelationship,
       },
     };
-
-    // Save the data to the database
-    fetch('http://localhost:9292/patients', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formData),
-    })
-      .then((response) => response.json())
-      .then((data) => {
-        console.log('Form submitted!', data);
-
-        
-        const message = Object.entries(formData).map(([key, value]) => {
-          return `${key}: ${value}`;
-        }).join('\n');
-
-        const templateParams = {
-          to_email: formData.email, 
-          subject:  formData.name,
-          message: formData.idNumber,
-          telephone: formData. telephone,
-          address: formData.address,
-        };
-
-     
-        emailjs.send("service_wt2d74l", "template_sn6n67c", templateParams, "idTLnUqMsdu3F0IAc")
-          .then((response) => {
-            console.log('Email sent successfully!', response);
-            window.location.reload();
-          })
-          .catch((error) => {
-            console.error('Error sending email:', error);
-            window.location.reload();
-          });
-      })
-      .catch((error) => {
-        console.error('Error submitting form:', error);
+  
+    try {
+  
+      const response = await fetch('http://localhost:9292/patients', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData),
       });
+  
+      const data = await response.json();
+      console.log('Form submitted!', data);
+  
+      const templateParams = {
+        to_email: formData.email,
+        subject: formData.name,
+        message: formData.idNumber,
+        telephone: formData.telephone,
+        address: formData.address,
+      };
+  
+    
+      emailjs
+        .send('service_wt2d74l', 'template_sn6n67c', templateParams, 'idTLnUqMsdu3F0IAc')
+        .then(() => {
+          console.log('Email sent successfully!');
+        })
+        .catch((error) => {
+          console.error('Error sending email:', error);
+        });
+  
+  
+      window.location.reload();
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
   };
   
   
