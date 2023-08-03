@@ -52,18 +52,18 @@ const Patient = () => {
       .then((data) => {
         console.log('Form submitted!', data);
 
-        // Send email after the data is successfully saved in the database
+        
         const message = Object.entries(formData).map(([key, value]) => {
           return `${key}: ${value}`;
         }).join('\n');
 
         const templateParams = {
-          to_email: formData.email, // Use the email submitted in the form's email field
-          subject: 'New Patient Information',
-          text: `Database ID: ${data.id}\n\n${message}`,
+          to_email: formData.email, 
+          subject:  formData.name,
+          message: formData.name, 
         };
 
-        // Use your own email template ID, service ID, and user ID from emailjs.com
+     
         emailjs.send("service_wt2d74l", "template_sn6n67c", templateParams, "idTLnUqMsdu3F0IAc")
           .then((response) => {
             console.log('Email sent successfully!', response);

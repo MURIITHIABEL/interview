@@ -14,4 +14,4 @@ npm start
 the frontend runs at http://localhost:3000/
 
 ## EMAILJS SERVICE
- email js service is used to send the email
+email js service is used to send the email

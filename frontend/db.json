@@ -139,6 +139,86 @@
         "relationship": "male"
       },
       "id": 7
+    },
+    {
+      "telephone": "07076066",
+      "name": "Ruby",
+      "dob": "2023-08-08",
+      "idNumber": "364840",
+      "address": "wdwjjd",
+      "county": "wew",
+      "subCounty": "adea",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "male",
+      "maritalStatus": "male",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-15",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 8
+    },
+    {
+      "telephone": "07076066",
+      "name": "Abel",
+      "dob": "2023-08-17",
+      "idNumber": "434",
+      "address": "dxv",
+      "county": "sd",
+      "subCounty": "as",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "as",
+      "maritalStatus": "as",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-15",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 9
+    },
+    {
+      "telephone": "07076066",
+      "name": "ferrari",
+      "dob": "2023-08-15",
+      "idNumber": "434",
+      "address": "fgf",
+      "county": "sds",
+      "subCounty": "sd",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "male",
+      "maritalStatus": "male",
+      "nextOfKin": {
+        "name": "carl",
+        "dob": "2023-08-08",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 10
+    },
+    {
+      "telephone": "07076066",
+      "name": "Toyota",
+      "dob": "2023-08-16",
+      "idNumber": "434",
+      "address": "df",
+      "county": "dfs",
+      "subCounty": "sd",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "sd",
+      "maritalStatus": "sd",
+      "nextOfKin": {
+        "name": "abel",
+        "dob": "2023-08-25",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 11
     }
   ]
 }
