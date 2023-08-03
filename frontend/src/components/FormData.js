@@ -53,10 +53,14 @@ const Patient = () => {
         console.log('Form submitted!', data);
 
         // Send email after the data is successfully saved in the database
+        const message = Object.entries(formData).map(([key, value]) => {
+          return `${key}: ${value}`;
+        }).join('\n');
+
         const templateParams = {
-          to_email: formData.email, // Replace with the actual recipient's email
+          to_email: formData.email, // Use the email submitted in the form's email field
           subject: 'New Patient Information',
-          text: `Reference no.: ${data.id}\n\nData:\n${JSON.stringify(formData, null, 2)}`,
+          text: `Database ID: ${data.id}\n\n${message}`,
         };
 
         // Use your own email template ID, service ID, and user ID from emailjs.com
@@ -74,6 +78,8 @@ const Patient = () => {
         console.error('Error submitting form:', error);
       });
   };
+  
+  
 
   
 

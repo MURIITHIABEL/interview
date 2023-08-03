@@ -39,6 +39,106 @@
         "relationship": "male"
       },
       "id": 2
+    },
+    {
+      "telephone": "07076066",
+      "name": "doni",
+      "dob": "2023-08-10",
+      "idNumber": "434",
+      "address": "hyhgkj",
+      "county": "sds",
+      "subCounty": "hhj",
+      "email": "ab@gmail.com",
+      "gender": "male",
+      "maritalStatus": "married",
+      "nextOfKin": {
+        "name": "carl",
+        "dob": "2023-08-29",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "done"
+      },
+      "id": 3
+    },
+    {
+      "telephone": "07076066",
+      "name": "doni",
+      "dob": "2023-08-10",
+      "idNumber": "434",
+      "address": "hyhgkj",
+      "county": "sds",
+      "subCounty": "hhj",
+      "email": "ab@gmail.com",
+      "gender": "male",
+      "maritalStatus": "married",
+      "nextOfKin": {
+        "name": "carl",
+        "dob": "2023-08-29",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "done"
+      },
+      "id": 4
+    },
+    {
+      "telephone": "07076066",
+      "name": "Toyota",
+      "dob": "2023-08-15",
+      "idNumber": "434",
+      "address": "kyygkwuee",
+      "county": "wrg",
+      "subCounty": "ewfw",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "qerff",
+      "maritalStatus": "wew",
+      "nextOfKin": {
+        "name": "wde",
+        "dob": "2023-08-08",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 5
+    },
+    {
+      "telephone": "07076066",
+      "name": "Toyota",
+      "dob": "2023-08-15",
+      "idNumber": "434",
+      "address": "kyygkwuee",
+      "county": "wrg",
+      "subCounty": "ewfw",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "qerff",
+      "maritalStatus": "wew",
+      "nextOfKin": {
+        "name": "wde",
+        "dob": "2023-08-08",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 6
+    },
+    {
+      "telephone": "07076066",
+      "name": "Toyota",
+      "dob": "2023-08-15",
+      "idNumber": "434",
+      "address": "kyygkwuee",
+      "county": "wrg",
+      "subCounty": "ewfw",
+      "email": "abelmuriithi04@gmail.com",
+      "gender": "qerff",
+      "maritalStatus": "wew",
+      "nextOfKin": {
+        "name": "wde",
+        "dob": "2023-08-08",
+        "idNumber": "53534",
+        "gender": "male",
+        "relationship": "male"
+      },
+      "id": 7
     }
   ]
 }
